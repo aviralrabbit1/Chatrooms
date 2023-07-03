@@ -1,6 +1,6 @@
 # Chatrooms App
 
-Run the following two lines of code in `client-react/`.
+Run the these code in `client-react/`.
 
 ```
 npm install

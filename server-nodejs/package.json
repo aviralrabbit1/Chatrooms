@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "was start": "nodemon index.js",
+    "start": "node app",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client-react",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client-react",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    
   },
   "author": "Aviral Verma",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
