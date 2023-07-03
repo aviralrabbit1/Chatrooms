@@ -27,7 +27,7 @@ const AuthPage = (props) => {
         last_name,
       })
       .then((r) => props.onAuth({ ...r.data, secret })) // NOTE: over-ride secret
-      .catch((e) => console.log(JSON.stringify(e.response.data)));
+      // .catch((e) => console.log(JSON.stringify(e.response.data)));
   };
 
   return (
