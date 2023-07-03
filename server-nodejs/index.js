@@ -1,10 +1,13 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
+
+app.use(express.static(path.join(__dirname, "/public"))); 
 
 const CHAT_ENGINE_PROJECT_ID = "5b52eb88-3e1f-4e35-97a5-a47d2c86ee97";
 const CHAT_ENGINE_PRIVATE_KEY = "f7ba934a-ddbe-416f-b87a-3d5f88017abf";
@@ -46,4 +49,6 @@ app.post("/login", async (req, res) => {
 });
 
 // vvv On port 3001!
-app.listen(3001);
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT);
