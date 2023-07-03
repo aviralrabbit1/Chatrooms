@@ -13,7 +13,7 @@ const AuthPage = (props) => {
     axios
       .post("http://localhost:3001/login", { username, secret })
       .then((r) => props.onAuth({ ...r.data, secret })) // NOTE: over-ride secret
-      .catch((e) => console.log(JSON.stringify(e.response.data)));
+      // .catch((e) => console.log(JSON.stringify(e.response.data)));
   };
 
   const onSignup = (e) => {
