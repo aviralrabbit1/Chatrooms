@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const axios = require("axios");
 const PORT = process.env.PORT || 3001;
-dotenv.config();
+// dotenv.config();
 
 const app = express();
 app.use(express.json());
