@@ -9,10 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 
-const buildPath = path.join(__dirname, 'build')
-app.use(express.static(buildPath))
+// const buildPath = path.join(__dirname, 'build')
+// app.use(express.static(buildPath))
 
-// app.use(express.static(path.join(__dirname, "/public"))); 
+app.use(express.static(path.join(__dirname, "/public", 'index.html'))); 
 
 const CHAT_ENGINE_PROJECT_ID = "5b52eb88-3e1f-4e35-97a5-a47d2c86ee97";
 const CHAT_ENGINE_PRIVATE_KEY = "f7ba934a-ddbe-416f-b87a-3d5f88017abf";
@@ -54,9 +54,9 @@ app.post("/login", async (req, res) => {
 });
 
 // gets the static files from the build folder
-app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'))
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(buildPath, 'index.html'))
+// })
 
 // vvv On port 3001!
 
